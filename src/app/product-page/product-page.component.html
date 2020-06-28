@@ -1,0 +1,44 @@
+<header></header>
+<nav class="navbar navbar-expand-md bg-dark  navbar-dark">
+    <span class="navbar-brand">Electonic Products</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="col-sm-11"></ul>
+      <ul class="navbar-nav ">
+        <li>
+            <button class="btn btn-info " (click)="signOut()">Sign Out </button>
+        </li>
+      </ul>
+    </div>  
+  </nav>
+  <section>
+   
+      <div class="container mt-2">
+          <span class="col-sm-10 spacing" >Welcome {{user}}</span>
+          <button class="btn btn-success" (click)="addproduct()"><i class="fas fa-plus"></i> Add product</button>
+    </div>
+    <!-- <p class="text-success" id="printData" > hello {{dataRecieved}}</p> -->
+    <div class="container ">
+      <!-- <p class="text-success" id="printDeletedMsg" >{{deletedMsg2}}</p> -->
+      <div *ngFor="let product of products" >
+      
+        <div class="row" [id]="product.id">
+       
+          <div class="col-sm-12">
+          <div class="card mx-3 px-4 mt-3 float-left" style="width:250px">
+              <img class="card-img-top" [src]="'data:image/jpeg;base64,'+product.image" alt="Card image">
+            </div>
+            <div class="" style="margin-left: 282px;"> 
+              <p><b class="">{{product.productName}}</b></p>
+              <div class="float-right mt-n4 mr-3"><button class="btn btn-info" (click)="updateProduct(product)">Update</button>&nbsp;&nbsp;&nbsp; <button class="btn btn-danger" (click)="deleteProduct(product)" >Delete</button></div>
+              <div *ngIf="product.category=='mobile'"><span><b> RAM:</b>{{product.ramMobile}}</span>&nbsp;&nbsp;&nbsp;&nbsp; <span><b>Screen size</b>:{{product.screenSize}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span><b>Color:</b> {{product.color}} </span><br></div>
+              <div *ngIf="product.category=='laptop'"><span><b> RAM:</b>{{product.ramLaptop}}</span>&nbsp;&nbsp;&nbsp;&nbsp; <span><b>processor</b>:{{product.processor}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span><b>HD capacity:</b> {{product.hdCapacity}} </span><br></div>
+              <b> Description: </b>
+              <p>{{product.description}}</p></div>
+              </div><hr >
+          </div>
+      </div>
+    </div>
+  </section>

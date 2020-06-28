@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "nodeTech": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nodeTech"
+    }
+  },
+  "defaultProject": "nodeTech",
+  "cli": {
+    "analytics": "b17ec811-09bd-417b-b9f5-8170bf89e65d"
+  }
 }

@@ -1,0 +1,11 @@
+.spacing{
+    display: inline-block;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color: lightslategray;
+    height: 1px;
+  }
